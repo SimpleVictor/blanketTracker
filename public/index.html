@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <title>WebCrawler</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/style.css">
+    </head>
+    <body ng-controller="AppController as vm" style="background-color: #C4E0E5">
+
+
+
+    <div class="container">
+        <h1 class="text-center">Mia's Blanket Tracker</h1>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="jumbotron">
+                    <h3 class="text-center">Abbys Lane</h3>
+                    <hr>
+                    <ul id="scrollMe" class="my-ul">
+                        <li ng-repeat="list in vm.mylist track by $index"><div class="mydate">{{list.abbyDate| date:'yyyy-MM-dd HH:mm:ss'}} : {{list.abbyMessage}}</></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="jumbotron">
+                    <h3 class="text-center">Itsy Bitsy Bums</h3>
+                    <ul id="itsyscrollMe" class="my-ul">
+                        <li ng-repeat="itsyList in vm.myItsyList">
+                            <div class="mydate">{{itsyList.date | date:'yyyy-MM-dd HH:mm:ss'}} :</div>
+                            <div>Dapper : {{itsyList.data.Dapper}}</div>
+                            <div>Tula : {{itsyList.data.Tula}}</div>
+                            <div>Naida : {{itsyList.data.Naida}}</div>
+                            <div>Trend : {{itsyList.data.Trend}}</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+        <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
